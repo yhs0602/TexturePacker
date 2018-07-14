@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="horizontal"
+	android:gravity="center_horizontal"
+	android:layout_gravity="top|center_horizontal">
+
+	<ScrollView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_gravity="top|center_horizontal"
+		android:foregroundGravity="top|center_horizontal">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:gravity="top|center_horizontal"
+			android:orientation="vertical"
+			android:weightSum="4">
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal">
+
+				<EditText
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:ems="10"
+					android:text="Path"
+					android:layout_weight="1.0"
+					android:id="@+id/etPath"/>
+
+				<Button
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="Add"
+					android:id="@+id/btAdd"/>
+
+			</LinearLayout>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:text="List"
+				android:id="@+id/tvList"/>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="Total dimension"
+						android:layout_margin="10dp"/>
+
+					<NumberPicker
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:layout_gravity="center"
+						android:id="@+id/npTotDim"/>
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:text="Dimension"
+						android:layout_margin="10dp"/>
+
+					<NumberPicker
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:layout_gravity="center"
+						android:id="@+id/npDim"/>
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="Info"
+				android:id="@+id/tvInfo"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="Create"
+				android:id="@+id/btCreate"/>
+
+			<EditText
+				android:inputType="textMultiLine"
+				android:layout_width="match_parent"
+				android:ems="10"
+				android:layout_height="wrap_content"
+				android:id="@+id/etJava"
+				android:layout_weight="1.0"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="Copy to clipboard"
+				android:id="@+id/btCopy"/>
+
+		</LinearLayout>
+
+	</ScrollView>
+
+</LinearLayout>
+
