@@ -33,7 +33,7 @@ public class MainActivity extends Activity implements View.OnClickListener
 				int totDim=	npTotDim.getValue();
 				int dim= npDim.getValue();
 				totDim = roundUpToPowerOfTwo(totDim);
-				dim = roundUpToPowerOfTwo(dim);
+			//	dim = roundUpToPowerOfTwo(dim);
 				CreateAlias(totDim, dim);
 				break;
 		}
@@ -78,7 +78,7 @@ public class MainActivity extends Activity implements View.OnClickListener
 					continue;
 				}
 				dst.set(j * dim, i * dim, (j + 1) * dim, (i + 1) * dim);
-				coords[i*col+j].rect=new RectF((float)dst.left/totDim,(float)dst.top/totDim,(float)dst.right/totDim,(float)dst.bottom/totDim);
+				coords[i*col+j].rect=new RectF((float)dst.left/totDim,1f-(float)dst.top/totDim,(float)dst.right/totDim,1f-(float)dst.bottom/totDim);
 				canvas.drawBitmap(thebit, (Rect)null, dst, (Paint)null);
 				thebit.recycle();
 			}
@@ -95,7 +95,7 @@ public class MainActivity extends Activity implements View.OnClickListener
 				continue;
 			}
 			dst.set(j * dim, (row-1) * dim, (j + 1) * dim, row * dim);
-			coords[(row-1)*col+j].rect=new RectF((float)dst.left/totDim,(float)dst.top/totDim,(float)dst.right/totDim,(float)dst.bottom/totDim);
+			coords[(row-1)*col+j].rect=RectF((float)dst.left/totDim,1f-(float)dst.top/totDim,(float)dst.right/totDim,1f-(float)dst.bottom/totDim);
 			canvas.drawBitmap(thebit, (Rect)null, dst, (Paint)null);
 		}
 		try
@@ -116,7 +116,7 @@ public class MainActivity extends Activity implements View.OnClickListener
 			.append("		return new RectF(").append((float)ci.rect.left).append("f,")
 			.append(ci.rect.top).append("f,").append(ci.rect.right).append("f,").append(ci.rect.bottom).append("f);").append(ls);
 		}
-		sb.append("default: return new RectF();}").append(ls).append("}");
+		sb.append("default: return new RectF();").append(ls).append("}").append(ls).append("}");
 		etJava.setText(sb.toString());
 		return ;
 	}
